@@ -1,0 +1,18 @@
+----------------------Thể loại-------------------------
+insert into the_Loai(ten_the_loai)
+values('Lãng mạn'),
+('Trinh thám'),
+('Kinh dị'),
+('Tiểu thuyết'),
+('Ngôn tình'),
+('Sales')
+
+----------------------Sách-----------------------------
+insert into sach(gia_ban, so_luong, the_loai_id, ten_sach)
+values(65000, 35, 1, 'Hướng nội'),
+(55000, 15, 2, 'Vội vàng'),
+(70000, 25, 3, 'Chuyện con mèo dạy hải âu bay'),
+(150000, 73, 4, 'Đồi gió hú'),
+(40000, 61, 5, 'Tắt đèn'),
+(25000, 12, 6, 'Nam quốc sơn hà'),
+(35000, 5, 6, 'Nhữ trong')
