@@ -3,6 +3,7 @@ package com.example.NhaSach.service;
 import com.example.NhaSach.entity.TheLoaiEntity;
 import com.example.NhaSach.repository.TheLoaiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,5 +16,10 @@ public class TheLoaiService implements BaseService<TheLoaiEntity> {
     @Override
     public List<TheLoaiEntity> showAll() {
         return theLoaiRepository.findAll();
+    }
+
+    @Override
+    public Page<TheLoaiEntity> findPaginated(int pageNumber, int pageSize) {
+        return null;
     }
 }

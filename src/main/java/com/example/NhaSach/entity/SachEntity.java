@@ -31,4 +31,11 @@ public class SachEntity extends  BaseEntity{
 
     @Column(name = "ngonNgu")
     private String ngonNgu;
+
+    @ManyToOne
+    @JoinColumn(name = "tacgiaid")
+    private TacGiaEntity tacGia;
+
+    @Column(name = "thumbnail")
+    private String thumbnail;
 }
