@@ -25,10 +25,22 @@ public class SachAPI {
 
     @GetMapping("/books")
     public Page<SachForCardDTO> showSachs(
+            @RequestParam Optional<String> name,
             @RequestParam Optional<Integer> page,
             @RequestParam Optional<Integer> limit
             ){
-        Page<SachEntity> pageSachEntity = sachService.findPaginated(page.orElse(1), limit.orElse(3));
+        Page<SachEntity> pageSachEntity = sachService.findPaginated(name.orElse(""),page.orElse(1), limit.orElse(3));
+        Page<SachForCardDTO> pageSachDTO = sachConverter.toPageObjectDto(pageSachEntity);
+        return pageSachDTO;
+    }
+
+    @GetMapping("/books/genre/{genreId}")
+    public Page<SachForCardDTO> showSachsByTheLoai(
+            @PathVariable Optional<Integer> genreId,
+            @RequestParam Optional<Integer> page,
+            @RequestParam Optional<Integer> limit
+    ){
+        Page<SachEntity> pageSachEntity = sachService.findSachByTheLoaiId(genreId.orElse(1),page.orElse(1), limit.orElse(3));
         Page<SachForCardDTO> pageSachDTO = sachConverter.toPageObjectDto(pageSachEntity);
         return pageSachDTO;
     }

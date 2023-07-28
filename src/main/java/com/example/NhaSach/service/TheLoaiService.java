@@ -19,7 +19,7 @@ public class TheLoaiService implements BaseService<TheLoaiEntity> {
     }
 
     @Override
-    public Page<TheLoaiEntity> findPaginated(int pageNumber, int pageSize) {
+    public Page<TheLoaiEntity> findPaginated(String name, int pageNumber, int pageSize) {
         return null;
     }
 }

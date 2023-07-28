@@ -17,7 +17,7 @@ public class TacGiaService implements BaseService{
     }
 
     @Override
-    public Page findPaginated(int pageNumber, int pageSize) {
+    public Page findPaginated(String name, int pageNumber, int pageSize) {
         return null;
     }
 }

@@ -21,8 +21,13 @@ public class SachService implements BaseService<SachEntity> {
     }
 
     @Override
-    public Page<SachEntity> findPaginated(int pageNumber, int pageSize) {
+    public Page<SachEntity> findPaginated(String name, int pageNumber, int pageSize) {
         Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
-        return sachRepository.findAll(pageable);
+        return sachRepository.findByTenSachContains(name,pageable);
+    }
+
+    public Page<SachEntity> findSachByTheLoaiId(int theLoaiId, int pageNumber, int pageSize){
+        Pageable pageable = PageRequest.of(pageNumber -1, pageSize);
+        return sachRepository.findByTheLoaiId(theLoaiId, pageable);
     }
 }
