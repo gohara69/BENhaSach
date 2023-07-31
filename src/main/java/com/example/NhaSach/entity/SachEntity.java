@@ -3,6 +3,8 @@ package com.example.NhaSach.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "sach")
@@ -38,4 +40,7 @@ public class SachEntity extends  BaseEntity{
 
     @Column(name = "thumbnail")
     private String thumbnail;
+
+    @OneToMany(mappedBy = "sach")
+    private List<ReceiptDetailEntity> listReceiptDetails;
 }

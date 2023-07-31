@@ -20,4 +20,14 @@ public class TacGiaService implements BaseService{
     public Page findPaginated(String name, int pageNumber, int pageSize) {
         return null;
     }
+
+    @Override
+    public Object create(Object object) {
+        return null;
+    }
+
+    @Override
+    public Object findById(Long id) {
+        return null;
+    }
 }

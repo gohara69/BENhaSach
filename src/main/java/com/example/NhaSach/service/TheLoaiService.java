@@ -22,4 +22,14 @@ public class TheLoaiService implements BaseService<TheLoaiEntity> {
     public Page<TheLoaiEntity> findPaginated(String name, int pageNumber, int pageSize) {
         return null;
     }
+
+    @Override
+    public TheLoaiEntity create(TheLoaiEntity object) {
+        return null;
+    }
+
+    @Override
+    public TheLoaiEntity findById(Long id) {
+        return null;
+    }
 }

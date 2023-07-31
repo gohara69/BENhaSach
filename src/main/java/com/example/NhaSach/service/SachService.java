@@ -26,6 +26,16 @@ public class SachService implements BaseService<SachEntity> {
         return sachRepository.findByTenSachContains(name,pageable);
     }
 
+    @Override
+    public SachEntity create(SachEntity object) {
+        return null;
+    }
+
+    @Override
+    public SachEntity findById(Long id) {
+        return sachRepository.findById(id).orElse(null);
+    }
+
     public Page<SachEntity> findSachByTheLoaiId(int theLoaiId, int pageNumber, int pageSize){
         Pageable pageable = PageRequest.of(pageNumber -1, pageSize);
         return sachRepository.findByTheLoaiId(theLoaiId, pageable);
