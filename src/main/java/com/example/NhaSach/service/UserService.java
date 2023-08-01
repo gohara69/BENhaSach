@@ -24,11 +24,15 @@ public class UserService implements  BaseService<UserEntity> {
 
     @Override
     public UserEntity create(UserEntity object) {
-        return null;
+        return userRepository.save(object);
     }
 
     @Override
     public UserEntity findById(Long id) {
         return userRepository.findById(id).orElse(null);
+    }
+
+    public UserEntity findByEmailAndPassword(UserEntity object) {
+        return userRepository.findByEmailAndPassword(object.getEmail(), object.getPassword());
     }
 }

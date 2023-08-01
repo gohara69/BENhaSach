@@ -33,4 +33,7 @@ public class ReceiptEntity extends BaseEntity{
 
     @OneToMany(mappedBy = "receipt")
     private List<ReceiptDetailEntity> listReceiptDetails;
+
+    @Column(name = "total")
+    private Double total;
 }

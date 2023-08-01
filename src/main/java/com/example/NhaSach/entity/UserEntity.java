@@ -36,4 +36,10 @@ public class UserEntity extends BaseEntity{
 
     @OneToMany(mappedBy = "user")
     private List<ReceiptEntity> listReceipts;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "role")
+    private String role;
 }

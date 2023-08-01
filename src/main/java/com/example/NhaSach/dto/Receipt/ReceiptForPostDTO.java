@@ -20,4 +20,5 @@ public class ReceiptForPostDTO extends BaseDTO {
     public String address;
     public boolean status;
     private Long userid;
+    private Double total;
 }
